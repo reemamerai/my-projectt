@@ -1,0 +1,232 @@
+:root {
+    --primary: #4a6bff;
+    --primary-light: #6a89ff;
+    --primary-dark: #2a4bdb;
+    --secondary: #00c9a7;
+    --secondary-dark: #00a58e;
+    --warning: #ff9e3d;
+    --warning-dark: #ff8c1a;
+    --danger: #ff5e78;
+    --danger-dark: #ff3d5c;
+    --light: #ffffff;
+    --dark: #2d3748;
+    --text: #2d3748;
+    --text-light: #718096;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  body {
+    background: 
+      linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+      url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px;
+    min-height: 100vh;
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(74, 107, 255, 0.08), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 201, 167, 0.08), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+  }
+
+  header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+
+  .course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .course-card {
+    background-color: var(--light);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--primary);
+  }
+
+  .course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(74, 107, 255, 0.03), transparent);
+    z-index: 0;
+  }
+
+  .course-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 10px;
+  }
+
+  .course-title::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .action-buttons button {
+    flex: 1;
+    min-width: 80px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .action-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .action-buttons button:active {
+    transform: translateY(0);
+  }
+
+  .absence { 
+    background-color: var(--warning);
+  }
+  .absence:hover { 
+    background-color: var(--warning-dark);
+  }
+
+  .warning { 
+    background-color: var(--danger);
+  }
+  .warning:hover { 
+    background-color: var(--danger-dark);
+  }
+
+  .notice { 
+    background-color: var(--secondary);
+  }
+  .notice:hover { 
+    background-color: var(--secondary-dark);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 20px;
+    }
+    
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    .course-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+    
+    .action-buttons button {
+      width: 100%;
+    }
+  }
+
+  /* Icons for buttons (using Unicode) */
+  .absence::before {
+    content: "\2716"; /* X mark */
+  }
+  
+  .warning::before {
+    content: "\26A0"; /* Warning sign */
+  }
+  
+  .notice::before {
+    content: "\1F4E2"; /* Megaphone */
+  }

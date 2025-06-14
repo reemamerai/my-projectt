@@ -1,0 +1,96 @@
+ 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الحضور والغياب الذكي</title>
+     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="Style.css">
+    <link rel="stylesheet" href="login.css">
+     
+     
+
+</head>
+<body>
+    
+    <!-- الخلفية المتحركة -->
+    <!-- <div class="animated-bg">
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <div class="shape3"></div>
+        <div class="shape4"></div>
+    </div> -->
+    
+    <div class="login-container">
+        <div class="logo">
+            <img src="images/kalamoon-logo.png" alt="شعار جامعة القلمون" class="university-logo">
+        </div>
+        
+        <h2>نظام إدارة الحضور والغياب</h2>
+        <p class="subtitle">سجل الدخول للوصول إلى لوحة التحكم</p>
+
+        <div class="switch-buttons">
+            <button id="doctorBtn" class="active" onclick="showForm('doctor')">
+                <i class="icon-user-tie"></i> عضو هيئة تدريس
+            </button>
+            <button id="studentBtn" onclick="showForm('student')">
+                <i class="icon-graduation"></i> طالب
+            </button>
+        </div>
+
+        <form id="doctorForm" class="login-form">
+            <div class="input-group">
+                <label for="doctor-username">
+                    <i class="icon-user"></i> اسم المستخدم
+                </label>
+                <input type="text" id="doctor-username" name="doctor-username" placeholder="أدخل اسم المستخدم" required>
+            </div>
+            <div class="input-group">
+                <label for="doctor-password">
+                    <i class="icon-lock"></i> كلمة المرور
+                </label>
+                <input type="password" id="doctor-password" name="doctor-password" placeholder="أدخل كلمة المرور" required>
+            </div>
+            <button type="submit" class="login-btn">
+                <i class="icon-enter"></i> تسجيل الدخول
+            </button>
+            <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+        </form>
+
+        <form id="studentForm" class="login-form hidden">
+            <div class="input-group">
+                <label for="student-username">
+                    <i class="icon-id-card"></i> الرقم الجامعي
+                </label>
+                <input type="text" id="student-username" name="student-username" placeholder="أدخل الرقم الجامعي" required>
+            </div>
+            <div class="input-group">
+                <label for="student-password">
+                    <i class="icon-lock"></i> كلمة المرور
+                </label>
+                <input type="password" id="student-password" name="student-password" placeholder="أدخل كلمة المرور" required>
+            </div>
+            <button type="submit" class="login-btn">
+                <i class="icon-enter"></i> تسجيل الدخول
+            </button>
+            <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+        </form>
+    </div>
+
+    <script>
+        function showForm(userType) {
+            if (userType === 'doctor') {
+                document.getElementById('doctorForm').classList.remove('hidden');
+                document.getElementById('studentForm').classList.add('hidden');
+                document.getElementById('doctorBtn').classList.add('active');
+                document.getElementById('studentBtn').classList.remove('active');
+            } else {
+                document.getElementById('doctorForm').classList.add('hidden');
+                document.getElementById('studentForm').classList.remove('hidden');
+                document.getElementById('doctorBtn').classList.remove('active');
+                document.getElementById('studentBtn').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

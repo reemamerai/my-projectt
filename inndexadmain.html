@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---ADMIN---</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="admin.css">
+    <link rel="stylesheet" href="admin.css">
+
+  
+</head>
+<body>
+
+    <h1>---ADMIN---</h1>
+    
+    <div class="container">
+        <button onclick="showForm('studentForm')">ADD STUDENT</button>
+        <button onclick="removeStudent()">REMOVE STUDENT</button>
+        <button onclick="showForm('professorForm')">ADD PROFESSOR</button>
+        <button onclick="removeProfessor()">REMOVE PROFESSOR</button>
+        <button onclick="assignCourseToStudent()">ASSIGN COURSE TO STUDENT</button>
+        <button onclick="assignCourseToProfessor()">ASSIGN COURSE TO PROFESSOR</button>
+    </div>
+
+    <!-- فورم إضافة طالب -->
+    <div id="studentForm" class="form-container">
+        <h3>إضافة طالب</h3>
+        <label>الرقم:</label>
+        <input type="text" id="studentId"><br><br>
+        <label>الاسم:</label>
+        <input type="text" id="studentName"><br><br>
+        <label>الإيميل:</label>
+        <input type="email" id="studentEmail"><br><br>
+        <label>كلمة المرور:</label>
+        <input type="password" id="studentPassword"><br><br>
+        <button onclick="addStudent()">إضافة</button>
+        <button onclick="hideForm('studentForm')">إلغاء</button>
+    </div>
+
+    <!-- فورم إضافة أستاذ -->
+    <div id="professorForm" class="form-container">
+        <h3>إضافة أستاذ</h3>
+        <label>الرقم:</label>
+        <input type="text" id="professorId"><br><br>
+        <label>الاسم:</label>
+        <input type="text" id="professorName"><br><br>
+        <label>الإيميل:</label>
+        <input type="email" id="professorEmail"><br><br>
+        <label>كلمة المرور:</label>
+        <input type="password" id="professorPassword"><br><br>
+        <button onclick="addProfessor()">إضافة</button>
+        <button onclick="hideForm('professorForm')">إلغاء</button>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function hideForm(formId) {
+            document.getElementById(formId).style.display = 'none';
+        }
+
+        function addStudent() {
+            let id = document.getElementById('studentId').value;
+            let name = document.getElementById('studentName').value;
+            let email = document.getElementById('studentEmail').value;
+            let password = document.getElementById('studentPassword').value;
+            
+            if (id && name && email && password) {
+                alert('تمت إضافة الطالب: ${name}');
+                hideForm('studentForm');
+            } else {
+                alert("يرجى ملء جميع الحقول");
+            }
+        }
+
+        function removeStudent() {
+            alert("تم حذف الطالب");
+        }
+
+        function addProfessor() {
+            let id = document.getElementById('professorId').value;
+            let name = document.getElementById('professorName').value;
+            let email = document.getElementById('professorEmail').value;
+            let password = document.getElementById('professorPassword').value;
+
+            if (id && name && email && password) {
+                alert('تمت إضافة الأستاذ: ${name}');
+                hideForm('professorForm');
+            } else {
+                alert("يرجى ملء جميع الحقول");
+            }
+        }
+
+        function removeProfessor() {
+            alert("تم حذف الأستاذ");
+        }
+        function assignCourseToStudent() {
+            alert("تم تعيين المادة للطالب");
+        }
+
+        function assignCourseToProfessor() {
+            alert("تم تعيين المادة للأستاذ");
+        }
+    </script>
+
+</body>
+</html>
