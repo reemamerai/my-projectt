@@ -3,43 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <title>لوحة الطالب</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="student.css">
-   
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      background-color: #2980b9;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .course-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .action-buttons button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .absence {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .absence:hover {
+      background-color: #c0392b;
+    }
+
+    .warning {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    .warning:hover {
+      background-color: #e67e22;
+    }
+
+    .notice {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .notice:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>مرحباً بك، الطالب</h1>
-  </header>
+  <header>مرحباً بك، الطالب</header>
 
   <div class="course-container">
+    <!-- قائمة المواد -->
     <div class="course-card">
-      <div class="course-title">المنطق العائم</div>
+      <div class="course-title">البرمجة</div>
       <div class="action-buttons">
-        <button class="absence">الغيابات</button>
-        <button class="warning">الإنذارات</button>
-        <button class="notice">🔔</button>      </div>
-
+        <a href="absence.html"><button class="absence">الغيابات</button></a>
+        <a href="warnings.html"><button class="warning">الإنذارات</button></a>
+        <a href="notifications.html"><button class="notice">🔔</button></a>
       </div>
     </div>
 
     <div class="course-card">
-      <div class="course-title">دارات منطقية</div>
+      <div class="course-title">خوارزميات وبنى معطيات 1</div>
       <div class="action-buttons">
-        <button class="absence">الغيابات</button>
-        <button class="warning">الإنذارات</button>
-        <button class="notice">🔔</button>      </div>
+        <a href="absence.html"><button class="absence">الغيابات</button></a>
+        <a href="warnings.html"><button class="warning">الإنذارات</button></a>
+        <a href="notifications.html"><button class="notice">🔔</button></a>
+      </div>
     </div>
 
     <div class="course-card">
-      <div class="course-title">تحليل رياضي</div>
+      <div class="course-title">خوارزميات وبنى معطيات 2</div>
       <div class="action-buttons">
-        <button class="absence">الغيابات</button>
-        <button class="warning">الإنذارات</button>
-        <button class="notice">🔔</button>      </div>        
+        <a href="absence.html"><button class="absence">الغيابات</button></a>
+        <a href="warnings.html"><button class="warning">الإنذارات</button></a>
+        <a href="notifications.html"><button class="notice">🔔</button></a>
       </div>
     </div>
+
+    <div class="course-card">
+      <div class="course-title">شبكات 1</div>
+      <div class="action-buttons">
+        <a href="absence.html"><button class="absence">الغيابات</button></a>
+        <a href="warnings.html"><button class="warning">الإنذارات</button></a>
+        <a href="notifications.html"><button class="notice">🔔</button></a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-title">شبكات 2</div>
+      <div class="action-buttons">
+        <a href="absence.html"><button class="absence">الغيابات</button></a>
+        <a href="warnings.html"><button class="warning">الإنذارات</button></a>
+        <a href="notifications.html"><button class="notice">🔔</button></a>
+      </div>
+    </div>
+
+    
   </div>
 
 </body>
